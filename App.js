@@ -5,18 +5,31 @@ import {
   FlatList,
   View,
   Image,
-  Dimensions
+  Dimensions,
+  SafeAreaView
 } from "react-native";
-import HeaderScrollView from "react-native-header-scroll-view";
+import AlphabetSectionList from "react-native-alphabet-sectionlist";
+import sectionListGetItemLayout from "react-native-section-list-get-item-layout";
 
-import data from "./data";
+import collection from "./data";
+
+const collectionByAlphabet = collection.releases.reduce((acc, item) => {
+  const artist = item.basic_information.artists[0].name;
+  const firstLetterCapitalized = artist[0].toUpperCase();
+  return {
+    ...acc,
+    [firstLetterCapitalized]: acc[firstLetterCapitalized]
+      ? [...acc[firstLetterCapitalized], item]
+      : [item]
+  };
+}, {});
 
 const win = Dimensions.get("window");
 
 const Item = ({ item }) => {
   return (
-    <View>
-      <Text>{item.basic_information.title}</Text>
+    <View key={item.basic_information.instance_id}>
+      {/* <Text>{item.basic_information.title}</Text> */}
       <Image
         source={{ uri: item.basic_information.cover_image }}
         style={styles.image}
@@ -25,15 +38,26 @@ const Item = ({ item }) => {
   );
 };
 
+const getItemLayout = sectionListGetItemLayout({
+  getItemHeight: (rowData, sectionIndex, rowIndex) => win.width,
+  getSectionHeaderHeight: () => 12,
+  listHeaderHeight: 40
+});
+
+const renderHeader = () => {
+  return <Text>Your Collection</Text>;
+};
+
 export default function App() {
   return (
-    <HeaderScrollView title="Your Collection">
-      <FlatList
-        data={data.releases}
+    <SafeAreaView style={{ flex: 1 }}>
+      <AlphabetSectionList
+        data={collectionByAlphabet}
         renderItem={({ item }) => <Item item={item} />}
-        keyExtractor={item => item.basic_information.instance_id}
+        getItemLayout={getItemLayout}
+        renderHeader={renderHeader}
       />
-    </HeaderScrollView>
+    </SafeAreaView>
   );
 }
 

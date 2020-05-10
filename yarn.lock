@@ -4512,6 +4512,11 @@ merge-stream@^2.0.0:
   resolved "https://registry.yarnpkg.com/merge-stream/-/merge-stream-2.0.0.tgz#52823629a14dd00c9770fb6ad47dc6310f2c1f60"
   integrity sha512-abv/qOcuPfk3URPfDzmZU1LKmuw8kT+0nIHvKrKgFrwifol/doWcdA4ZqsWQ8ENrFKkd67Mfpo/LovbIUsbt3w==
 
+merge@^1.2.1:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/merge/-/merge-1.2.1.tgz#38bebf80c3220a8a487b6fcfb3941bb11720c145"
+  integrity sha512-VjFo4P5Whtj4vsLzsYBu5ayHhoHJ0UqNm7ibvShmbmoz7tGi0vXaoJbGdB+GmDMLUdg8DpQXEIeVDAe8MaABvQ==
+
 metro-babel-register@^0.56.0, metro-babel-register@^0.56.4:
   version "0.56.4"
   resolved "https://registry.yarnpkg.com/metro-babel-register/-/metro-babel-register-0.56.4.tgz#b0c627a1cfdd1bdd768f81af79481754e833a902"
@@ -5523,10 +5528,13 @@ react-is@^16.12.0, react-is@^16.8.1, react-is@^16.8.4, react-is@^16.9.0:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
 
-react-native-fade@^1.0.3:
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/react-native-fade/-/react-native-fade-1.0.3.tgz#e27cd5a75c0d09a9ee82d854fb3851006c228d23"
-  integrity sha512-MVqjYVxzuUBDjkgMygZKJIkrsM3WI1SqwFc+7nTR72bUcn6HpqCDHH5ZfUT2H5dqKDtndvNkRtNER9PZr9yGTA==
+react-native-alphabet-sectionlist@^0.0.4:
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/react-native-alphabet-sectionlist/-/react-native-alphabet-sectionlist-0.0.4.tgz#6d8aa46acdbc1e76b20ee6ca90cbfd0ad2c154a9"
+  integrity sha512-iX6ZVVvCBcaz2FyMxXQkjpgrg0VBuSaFax8FArmXOzQRVYeVrw20NAAxo2Mloia6heQeMS2cyhR8JHQAntRYow==
+  dependencies:
+    merge "^1.2.1"
+    prop-types "^15.7.2"
 
 react-native-gesture-handler@~1.6.0:
   version "1.6.1"
@@ -5537,19 +5545,6 @@ react-native-gesture-handler@~1.6.0:
     hoist-non-react-statics "^2.3.1"
     invariant "^2.2.4"
     prop-types "^15.7.2"
-
-react-native-header-scroll-view@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/react-native-header-scroll-view/-/react-native-header-scroll-view-2.0.0.tgz#68781256fdaac8f7ee4ed23f71016fcbabc50924"
-  integrity sha512-9JuMaa5Ec/WfZlQl4LnHiHO3c8Od/43EKJU/NKy20b4z7C3ZD14Ho4gloXiv33E2NR4KLnKJsKDulgGIwXuQHQ==
-  dependencies:
-    react-native-fade "^1.0.3"
-    react-native-iphone-x-helper "^1.2.0"
-
-react-native-iphone-x-helper@^1.2.0:
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/react-native-iphone-x-helper/-/react-native-iphone-x-helper-1.2.1.tgz#645e2ffbbb49e80844bb4cbbe34a126fda1e6772"
-  integrity sha512-/VbpIEp8tSNNHIvstuA3Swx610whci1Zpc9mqNkqn14DkMbw+ORviln2u0XyHG1kPvvwTNGZY6QpeFwxYaSdbQ==
 
 react-native-reanimated@~1.7.0:
   version "1.7.1"
@@ -5564,6 +5559,11 @@ react-native-screens@~2.2.0:
   integrity sha512-a0VzxOWot7F9B/GQyDSssBRd3jUJazFnTQS61IiyReWB6aHlFhf3Xz10jBRoURXy1EMCDCHgenmTVTkKHpKyqQ==
   dependencies:
     debounce "^1.2.0"
+
+react-native-section-list-get-item-layout@^2.2.3:
+  version "2.2.3"
+  resolved "https://registry.yarnpkg.com/react-native-section-list-get-item-layout/-/react-native-section-list-get-item-layout-2.2.3.tgz#152a8efdcb3847dbcbeb04cd2d0de4312d3d2fcb"
+  integrity sha512-fzCW5SiYP6qCZyDHebaElHonIFr8NFrZK9JDkxFLnpxMJih4d+HQ4rHyOs0Z4Gb/FjyCVbRH7RtEnjeQ0XffMg==
 
 react-native-unimodules@~0.9.0:
   version "0.9.1"

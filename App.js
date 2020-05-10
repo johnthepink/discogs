@@ -48,6 +48,14 @@ const renderHeader = () => {
   return <Text>Your Collection</Text>;
 };
 
+const renderRightListItem = ({ title }) => {
+  return (
+    <View style={styles.rightItem}>
+      <Text style={styles.rightText}>{title}</Text>
+    </View>
+  );
+};
+
 export default function App() {
   return (
     <SafeAreaView style={{ flex: 1 }}>
@@ -56,6 +64,7 @@ export default function App() {
         renderItem={({ item }) => <Item item={item} />}
         getItemLayout={getItemLayout}
         renderHeader={renderHeader}
+        rightSectionListItem={renderRightListItem}
       />
     </SafeAreaView>
   );
@@ -65,5 +74,13 @@ const styles = StyleSheet.create({
   image: {
     width: "100%",
     height: win.width
+  },
+  rightItem: {
+    backgroundColor: "rgba(255, 255, 255, 0.8)",
+    width: 20,
+    alignItems: "center"
+  },
+  rightText: {
+    fontWeight: "700"
   }
 });

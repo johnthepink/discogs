@@ -1,19 +1,45 @@
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  FlatList,
+  View,
+  Image,
+  Dimensions
+} from "react-native";
+import HeaderScrollView from "react-native-header-scroll-view";
+
+import data from "./data";
+
+const win = Dimensions.get("window");
+
+const Item = ({ item }) => {
+  return (
+    <View>
+      <Text>{item.basic_information.title}</Text>
+      <Image
+        source={{ uri: item.basic_information.cover_image }}
+        style={styles.image}
+      />
+    </View>
+  );
+};
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-    </View>
+    <HeaderScrollView title="Your Collection">
+      <FlatList
+        data={data.releases}
+        renderItem={({ item }) => <Item item={item} />}
+        keyExtractor={item => item.basic_information.instance_id}
+      />
+    </HeaderScrollView>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center"
+  image: {
+    width: "100%",
+    height: win.width
   }
 });

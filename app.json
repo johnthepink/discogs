@@ -1,0 +1,17 @@
+{
+  "name": "discogs",
+  "displayName": "discogs",
+  "expo": {
+    "name": "discogs",
+    "slug": "discogs",
+    "version": "1.0.0",
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
